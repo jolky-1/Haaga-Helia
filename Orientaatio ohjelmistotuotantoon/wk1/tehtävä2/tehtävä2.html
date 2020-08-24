@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tehtävä2</title>
+    <style>
+        input {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <form >
+        <label > Paketin hinta: </label>
+        <input type="text"  id="hinta">
+        <label >Määräaika</label>
+        <input type="text" id="aika">
+
+        <input type="button" value="Laske kokonaishinta" onclick="laskeHinta()">
+    </form>
+    <div id="vastaus"></div>
+    
+    <script>
+        function laskeHinta() {
+            let hinta = document.querySelector('#hinta').value * document.querySelector('#aika').value;
+            document.querySelector('#vastaus').innerHTML = 'Kokonaishinta on ' + hinta.toFixed(2) + ' euroa';
+        }
+    </script>
+</body>
+</html>

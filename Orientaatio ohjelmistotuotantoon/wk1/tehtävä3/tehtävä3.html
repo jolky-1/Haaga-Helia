@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tehtävä3</title>
+    <style>
+        div{
+            padding: 1rem 0rem;
+        }
+    </style>
+</head>
+<body>
+    <form>
+        <div>
+            <label >Vuokra: </label>
+            <input type="text"  id="hinta">
+        </div>
+        <div>
+            <label >Osallistujat </label>
+            <input type="text"  id="osallistujat">
+        </div>
+        <input type="button" value="Laske Vuokra" onclick="laskeVuokra()">
+    </form>
+
+    <div id="vastaus"></div>
+    
+    <script>
+        function laskeVuokra(){
+            let vuokra = document.querySelector('#hinta').value;
+            let hlomaara = document.querySelector('#osallistujat').value;
+            let hinta =vuokra/hlomaara
+            document.querySelector('#vastaus').innerHTML = 'Vuokra per henkilö on ' + hinta.toFixed(2) + ' euroa'
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tehtävä1</title>
+</head>
+<body>
+    <form action="#">
+        <label>Nettotulot</label>
+        <input type="text" id="nettotulot" size="5">
+        <input type="button" value="Laske päiväsakko" onclick="laskePaivasakko()" >
+    </form>
+    <div id="vastaus"></div>
+
+    <script>
+        function laskePaivasakko() {
+            let nettotulot = document.querySelector('#nettotulot').value;
+            let sakko = (nettotulot -255) / 60;
+            document.querySelector('#vastaus').innerHTML = 'Päiväsakko on ' + sakko.toFixed(2); 
+        }
+    </script>
+    
+</body>
+</html>
