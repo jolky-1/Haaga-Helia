@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tehtävä5</title>
+
+    <style>
+        form{
+            display: grid;
+            grid-template-columns:.5fr .5fr ;
+            width: 30%;
+            grid-gap:1rem ;
+            margin-bottom: 1rem;
+        }
+    </style>
+</head>
+<body>
+
+    <form>
+        <label>Bruttopalkka: </label>
+        <input type="text" id="palkka">
+        <label >Veroprosentti</label>
+        <input type="text" id ="veroprosentti">
+
+        <input type="button" value="Laske Palkka" onclick="laskePalkka()">
+    </form>
+
+    <div id="vastaus"></div>
+    
+    <script>
+        let bruttopalkka;
+        let veroprosentti;
+
+
+        function laskePalkka(){
+            bruttopalkka = document.querySelector('#palkka').value; 
+            veroprosentti = document.querySelector('#veroprosentti').value;
+
+            document.querySelector('#vastaus').innerHTML = 
+            'Veron osuus ' + laskeVero().toFixed(2) + '</br>' +
+            'Työeläkevakuutusmaksun osuus ' + laskeTyöeläkevakuutus().toFixed(2) + '</br>' +
+            'Työttömyysvakuutusmaksun osuus ' +  laskeTyöttömyysvakuutus().toFixed(2) + '</br>' +
+            'Käteen jää ' +  Käteenjää().toFixed(2);          
+        };
+
+        function laskeVero(){
+            return bruttopalkka * veroprosentti / 100;
+        };
+
+        function laskeTyöttömyysvakuutus(){
+            return bruttopalkka * 0.015;
+        };
+
+        function laskeTyöeläkevakuutus(){
+            return bruttopalkka * 0.0675
+        };
+
+        function Käteenjää(){
+            return bruttopalkka - laskeVero() - laskeTyöttömyysvakuutus() - laskeTyöeläkevakuutus();
+        };
+    </script>
+</body>
+</html>

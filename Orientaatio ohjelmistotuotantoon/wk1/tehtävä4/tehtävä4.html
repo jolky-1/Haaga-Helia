@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tehtävä4</title>
+    <style type="text/css">
+        form{
+            display: grid;
+            grid-template-columns: .5fr .5fr;
+            width: 35%;
+            grid-gap: 1rem;
+        }
+        #vastaus {
+            padding-top: 1rem;
+        }
+        </style>
+</head>
+<body>
+    <form >
+        <label>Kilometrit: </label>
+        <input type="text" id="kilometrit">
+        <label > Kulutus: </label>
+        <input type="text" id="kulutus">
+        <label >Litrahinta: </label>
+        <input type="text" id="litrahinta">
+        <label >Määrä: </label>
+        <input type="text" id="maara">
+
+        <input type="button" value="Laske" onclick="LaskePolttoaine()">
+
+    </form>
+    <div id="vastaus"></div>
+
+    <script>
+        // kulutus / 100.0 * litrahinta * kilometri / maara
+        function LaskePolttoaine(){
+            let kilometrit = document.querySelector('#kilometrit').value;
+            let kulutus = document.querySelector('#kulutus').value;
+            let litrahinta = document.querySelector('#litrahinta').value;
+            let maara = document.querySelector('#maara').value;
+
+            let tulos = kulutus / 100 * litrahinta * kilometrit / maara;
+
+            document.querySelector('#vastaus').innerHTML = 'Polttoaine per henkilö on ' + tulos.toFixed(2)
+             + ' euroa';
+
+        }   
+    </script>
+    
+</body>
+</html>
