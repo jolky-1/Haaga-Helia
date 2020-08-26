@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tehtävä4 wk2</title>
+    <style>
+        form{
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            width: 30%;
+            grid-gap: 1rem;
+            margin-bottom: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <form >
+        <label >Nopeus: </label>
+        <input type="text" id="nopeus">
+    
+        <input type="button" value="Kerro" onclick="laskeSakko()">
+    </form>
+    <div id="vastaus"></div>
+
+    <script>
+        function laskeSakko(){
+            let nopeus = parseInt(document.querySelector('#nopeus').value);
+            let vastaus = document.querySelector('#vastaus');
+
+            if(nopeus <= 60){
+                vastaus.innerHTML = "Ei ylinopeutta";
+            }else if(nopeus < 70){
+                vastaus.innerHTML = "Liikennevirhemaksu on 100";
+            }
+            else if(nopeus <= 75){
+                vastaus.innerHTML = "Liikennevirhemaksu on 170";
+            }else if(nopeus <=80) {
+                vastaus.innerHTML = "Liikennevirhemaksu on 200";
+            }else{
+                vastaus.innerHTML = "Menee päiväsakolle";
+            }
+        }
+    </script>
+</body>
+</html>

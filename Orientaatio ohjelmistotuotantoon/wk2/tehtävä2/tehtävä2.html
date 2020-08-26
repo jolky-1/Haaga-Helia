@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tehtävä2 wk2</title>
+    <style>
+        form{
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            width: 30%;
+            grid-gap: 1rem;
+            margin-bottom: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <form >
+        <label >Paino: </label>
+        <input type="text" id="paino">
+        <label >Pituus: </label>
+        <input type="text" id="pituus">
+
+        <input type="button" value="Laske" onclick="laskeBMI()">
+    </form>
+    <div id="vastaus"></div>
+
+    <script>
+        function laskeBMI() {
+            let pituus = document.querySelector('#pituus').value;
+            let paino = document.querySelector('#paino').value;
+            let vastaus = document.querySelector('#vastaus');
+            let bmi = paino / (pituus/100 * pituus / 100);
+
+            if(bmi < 18.5){
+                vastaus.innerHTML = 'Painoindeksi on '+ bmi.toFixed(2) + ' (normaalia alhaisempi paino)';
+            } else if (bmi < 25.0){
+                vastaus.innerHTML = 'Painoindeksi on '+ bmi.toFixed(2) + ' (normaali paino)';
+            }else{
+                vastaus.innerHTML = 'Painoindeksi on '+ bmi.toFixed(2) + ' (ylipaino)';
+            }
+        }
+    </script> 
+    
+</body>
+</html>

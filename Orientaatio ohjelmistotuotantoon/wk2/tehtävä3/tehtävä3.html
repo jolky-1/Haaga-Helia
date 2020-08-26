@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tehtävä3 wk2</title>
+    <style>
+        div{
+            margin-top: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <form >
+        <label>Panos: </label>
+        <input type="text"  id="panos">
+        <input type="button" value="Pelaa" onclick="laskeVoitto()">
+    </form>
+    <div id="voitto"></div>
+
+    <script>
+        function laskeVoitto(){
+            let noppa = Math.round((Math.random() * 5) +1);
+            console.log(noppa)
+            let panos = document.querySelector('#panos').value;
+            let voitto = document.querySelector('#voitto');
+
+
+            if(noppa == 1 || noppa == 3 || noppa == 5){
+                voitto.innerHTML = "Noppa oli " + noppa +  " - ei voittoa";
+            }else if(noppa == 2 || noppa == 4 ){
+                voitto.innerHTML = "Noppa oli " + noppa +  " - voitto on " + (1.25 * panos).toFixed(2);
+            }else {
+                voitto.innerHTML = "Noppa oli " + noppa +  " - voitto on " + (1.5 * panos).toFixed(2);
+            }
+        }
+    </script>
+    
+</body>
+</html>
