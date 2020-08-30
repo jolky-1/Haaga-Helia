@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tehtävä5 wk3</title>
+</head>
+<body>
+    <form >
+        <label >Kierrokset: </label>
+        <input type="text" id="kierrokset">
+        <input type="button" value="Pelaa" onclick="pelaa()">
+
+
+    </form>
+    <div id="vastaus"></div>
+
+    <script>
+        function pelaa(){
+
+            let kierrokset = document.querySelector('#kierrokset').value;
+            let voitot = 0.00;
+            
+
+            for (let i = 1; i <= kierrokset; i++){
+                let noppa = Math.round((Math.random() *5) + 1);
+
+                if(noppa === 2 || noppa === 4){
+                    voitot = voitot + 1.25;
+                }else if(noppa === 6) {
+                    voitot = voitot + 1.5;
+                }
+            }
+            document.querySelector('#vastaus').innerHTML =`
+            <p> Panokset oli ${kierrokset} <br> 
+            Maksetut voitot oli ${voitot} <br> 
+            Tulos oli  ${kierrokset-voitot} </p>`;
+        }
+    </script>
+</body>
+</html>

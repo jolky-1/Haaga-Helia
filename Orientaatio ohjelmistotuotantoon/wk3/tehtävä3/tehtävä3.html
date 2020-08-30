@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tehtävä3 wk3</title>
+    <style>
+        div{
+            margin-top: 1rem;
+        }
+    </style>
+</head>
+<body>
+
+    <form >
+        <label>Lähtöpaina: </label>
+        <input type="text" id="paino">
+        <input type="button" value="Näytä tavoitepainot" onclick="naytaTavoitepainot()">
+    </form>
+    <div id="tpainot"></div>
+    
+    <script>
+        function naytaTavoitepainot(){
+
+            let nykPaino = document.querySelector('#paino').value;
+            let painonlasku = nykPaino * 0.1 / 7;
+
+            let teksti = "";
+
+            for( let i = 1; i <= 7; i++){
+                nykPaino = nykPaino - painonlasku;
+                teksti = teksti + i + '. viikon jälkeen ' + nykPaino.toFixed(1) +'<br>';
+            }
+            document.querySelector('#tpainot').innerHTML = teksti;
+        }
+    </script>
+</body>
+</html>

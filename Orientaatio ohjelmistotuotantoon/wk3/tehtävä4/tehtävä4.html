@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tehtävä4 wk3</title>
+
+    <style>
+        form {
+            display: grid;
+            grid-template-columns: .5fr .25fr;
+            max-width: 40%;
+            grid-gap: 1rem;
+            margin-bottom: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <form >
+        <label >Kokonaisäänimäärä: </label>
+        <input type="text" id="aanet">
+        <label >Ehdokkaiden määrä: </label>
+        <input type="text" id="maara">
+        <input type="button" value="Näytä vertausluvut" onclick="laskeAanet()">
+
+    </form>
+    <div id="vastaus"></div>
+
+    <script>
+
+        function laskeAanet(){
+            let aanet = document.querySelector('#aanet').value;
+            let maara = document.querySelector('#maara').value;
+
+            let teksti = "";
+
+            for(let i = 1; i <= maara; i++){
+                let vertaisluku = aanet / i;
+                teksti = teksti + i +". " + vertaisluku.toFixed(0)+ '<br>';
+            }
+
+            document.querySelector('#vastaus').innerHTML = teksti ;
+        }
+
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tehtävä1 wk3</title>
+
+    <style>
+        body{
+            border: 1px solid #555;
+            width: 25%;
+            padding: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <h3>Samat nopat</h3>
+
+    <div id="vastaus"></div>
+
+    <script>
+        let noppa1= Math.round((Math.random() * 5 ) + 1 );
+        let noppa2= Math.round((Math.random() * 5 ) + 1 );
+
+        let lkm = 1;
+
+        while(noppa1 != noppa2) {
+            noppa1= Math.round((Math.random() * 5 ) + 1 );
+            noppa2= Math.round((Math.random() * 5 ) + 1 );
+            lkm++;
+        }
+        document.querySelector('#vastaus').innerHTML ="Arvontoja oli " + lkm + " kappaletta";
+
+    </script>
+</body>
+</html>

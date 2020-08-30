@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tehtävä2 wk3</title>
+</head>
+<body>
+    <div id="teksti"></div>
+
+    <script>
+        let teksti ="";
+        let numero;
+
+        for(let i = 1; i <= 100; i++ ) {
+            numero = Math.round((Math.random() * 9998) + 1);
+            teksti = teksti + numero + ' ';
+            if (i % 10 == 0){
+                teksti = teksti + "<br>";
+            }
+
+            document.querySelector('#teksti').innerHTML = teksti;
+
+        }
+    </script>
+</body>
+</html>
