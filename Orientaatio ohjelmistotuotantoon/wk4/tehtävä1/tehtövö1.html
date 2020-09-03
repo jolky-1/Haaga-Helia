@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tehtävä1 wk4</title>
+
+    <style>
+        div {
+            margin-top: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <form >
+        <label> Nimi: </label>
+        <input type="text" id="nimi">
+        <input type="button" value="Näytä" onclick="nayta()">   
+    </form>
+    <div id="vastaus"></div>
+
+    <script>
+
+        function nayta(){
+            let nimi = document.querySelector('#nimi').value;
+
+            document.querySelector('#vastaus').innerHTML = 
+            'Suurella: ' + upperCase(nimi) + '<br>' +
+            'Pienellä: ' + lowerCase(nimi) + '<br>' + 
+            'Merkkien määrä: ' + merkkienMaara(nimi) + '<br>' + 
+            'Eka merkki:  ' + ensimmainenMerkki(nimi) + '<br>' + 
+            'Kolme ekaa merkkiä: ' + kolmeEnsimmaistaMerkkia(nimi) + '<br>';
+        }
+        
+        function upperCase(merkkijono){
+            let isolla = merkkijono.toUpperCase();
+            return isolla;
+        }
+        function lowerCase(merkkijono){
+            return merkkijono.toLowerCase();
+        }
+        function merkkienMaara(merkkijono){
+            return merkkijono.length;
+        }
+        function ensimmainenMerkki(merkkijono) {
+            return merkkijono.charAt();
+        }
+        function kolmeEnsimmaistaMerkkia(merkkijono){
+            return merkkijono.substr(0,3);
+        }
+
+    </script>
+</body>
+</html>

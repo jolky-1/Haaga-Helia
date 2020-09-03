@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tehtävä2</title>
+    <style>
+        div{
+            margin-top: 1rem;
+        }
+    </style>
+</head>
+    <form >
+        <label >Syntymävuosi: </label>
+        <input type="text" id="vuosi" size="3">
+        <input type="button" value="Kerro ikä" onclick="laskeIka()">
+    </form>
+
+    <div id="vastaus"></div>
+
+    <script>
+
+        function laskeIka(){
+            let tanaan = new Date().getFullYear();
+            let vuosi = document.querySelector('#vuosi').value;
+            let vastaus = document.querySelector('#vastaus');
+            let erotus = tanaan- vuosi;
+
+            if(vuosi > tanaan){ 
+                vastaus.innerHTML= 'Syntymävuosi ei voi olla tulevaisuudessa.';
+            }else{
+                vastaus.innerHTML = 'Olet tänä vuonna ' + erotus + ' vuotta.';
+            }
+        }
+    </script>
+<body>
+    
+</body>
+</html>
