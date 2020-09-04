@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tehtävä3 wk4</title>
+    <style>
+        div{
+            margin-top: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <form >
+        <label>Henkilötunnus: </label>
+        <input type="text" id="hetu">
+        <input type="button" value="Näytä" onclick="nayta()">
+    </form>
+    <div id="vastaus"></div>
+
+    <script>
+        function nayta(){
+
+            let hetu = document.querySelector('#hetu').value;
+            let vastaus = document.querySelector('#vastaus');
+
+            vastaus.innerHTML = 'Sukupuoli on ' + naytaSukupuoli(hetu) + '.<br>' +
+                                'Syntymäpäivä on ' + naytaSyntymaaika(hetu);
+        }
+
+        function naytaSukupuoli(hetu){
+            let hetunro = hetu.charAt(9);
+            
+            if ((hetunro % 2 ) == 0){
+                return 'nainen';
+            }else {
+                return 'mies';
+            }
+        }
+
+        function naytaSyntymaaika(hetu){
+            let hetuvalimerkki = hetu.charAt(6);
+            let pva = hetu.substr(0,2);
+            let kk = hetu.substr(2,2);
+            let v = hetu.substr(4,2);
+            
+            if (hetuvalimerkki == '+'){
+                v = 18 + v;
+                return pva + '.' + kk + '.' + v + '.';
+            } else if (hetuvalimerkki == '-'){
+                v = 19 + v;
+                return pva + '.' + kk + '.' + v + '.';
+            }else  if (hetuvalimerkki == 'A'){
+                v = 20 + v;
+                return pva + '.' + kk + '.' + v + '.';
+            }else {
+                return '(Välimerkki ei käytössä tai on väärä.)'
+            }
+        }
+    </script>
+</body>
+
+</html>
