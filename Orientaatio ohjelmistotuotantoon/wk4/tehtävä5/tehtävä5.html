@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tehtävä5 wk4</title>
+    <style>
+        #vastaus {
+            margin-top: 1rem;
+        }
+        #btn {
+            display: block;
+            margin-top: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <form>
+        <label> Matkakulut: <input type="text" id="kulut" size="3"> euroa </label>
+        <input type="button" id="btn" value="Laske" onclick="laske()">
+    </form>
+
+    <div id="vastaus"></div>
+
+    <script>
+        function laske(){
+            let kulut = document.querySelector('#kulut').value;
+            let vastaus = document.querySelector('#vastaus');
+
+            vastaus.innerHTML = 'Vähennys on ' + laskeVahennys(kulut).toFixed(2);
+        }
+
+        function laskeVahennys(matkakulut){
+            let vahennys = matkakulut - 750;
+
+            if(vahennys <= 0){
+                return 0;
+            }else{
+                return vahennys;
+            }
+        }
+    </script>
+</body>
+</html>

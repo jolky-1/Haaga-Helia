@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tehtävä4 wk4</title>
+
+    <style>
+        #btn{
+            display: block;
+            margin-top: 1rem;
+        }
+        div{
+            margin-top: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <form>
+        <label> Kesto: <input type="text" id="kesto" size="3"> min </label>
+        <input type="button" id="btn" value="Laske" onclick="laske()">
+    </form>
+
+    <div id="vastaus"></div>
+
+    <script>
+        function laske() {
+            let kesto = document.querySelector('#kesto').value;
+            let vastaus = document.querySelector('#vastaus');
+
+            vastaus.innerHTML= 'Kelakorvaus on ' + laskeKorvaus(kesto).toFixed(2);
+        }
+
+        function laskeKorvaus(kesto){
+            
+            if(kesto <= 10 ){
+                return 7;
+            }else if( kesto <= 20){
+                return 9;
+            }else {
+                return 11;
+            }
+        }
+
+    </script>
+</body>
+</html>

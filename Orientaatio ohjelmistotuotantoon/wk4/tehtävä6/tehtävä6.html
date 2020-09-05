@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tehtävä6 wk4</title>
+    <style>
+        #btn{
+            display: block;
+            margin-top: 1rem;
+        }
+        div{
+            margin-top: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <form>
+        <label>Alkoi: </label>
+        <input type="time" id="alkoi">
+        <label>Päättyi: </label>
+        <input type="time" id="paattyi">
+
+        <input type="button" id="btn" value="laske" onclick="laske()">
+    </form>
+
+    <div id="vastaus"></div>
+
+    <script>
+        function laske(){
+            let vastaus = document.querySelector('#vastaus');
+            let alkoi = document.querySelector('#alkoi').value;
+            let paattyi = document.querySelector('#paattyi').value;
+
+            vastaus.innerHTML = 'Työn hinta on ' + laskeTyonhinta(alkoi,paattyi,48).toFixed(2) + 'euroa';
+        }
+
+        function laskeTyonhinta(alkoi,paattyi,tuntihinta){
+            let tunnit = paattyi.substr(0,2) - alkoi.substr(0,2);
+            let minuutit = (paattyi.substr(3,2) - alkoi.substr(3,2)) /60;
+            
+            return (tunnit + minuutit) * tuntihinta;
+        }
+    </script>
+</body>
+</html>
