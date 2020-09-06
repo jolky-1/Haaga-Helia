@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tehtävä1 wk5</title>
+    <style>
+        div{
+            padding: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <div id="layout"></div>
+
+    <script>
+        let layout = document.querySelector('#layout');
+        let sademaarat = [47.0,36.6,34.7,37.0,41.9,47.5,61.7,74.8,65.4,69.7,66.1,54.6];
+
+        let summa = 0;
+
+        for( let i = 0; i < sademaarat.length; i++) {
+            summa = summa + sademaarat[i]
+        }
+        
+        layout.innerHTML = 'Helsingin sademäärä vuodessa on ' + summa.toFixed(1);
+
+    </script>
+</body>
+</html>
