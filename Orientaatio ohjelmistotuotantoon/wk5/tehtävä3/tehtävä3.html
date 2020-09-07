@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tehtävä3 wk5</title>
+    <style>
+        div{
+            margin-top: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <form>
+        <label> Haettava veriryhmä: </label>
+        <input type="text" size="3" id="input">
+        <input type="button" value="Kerro" onclick="kerro()">
+
+    </form>
+
+    <div id="vastaus"></div>
+
+    <script>
+        function kerro(){
+            let input = document.querySelector('#input').value.toUpperCase().trim();
+            let vastaus = document.querySelector('#vastaus');
+            let veriryhmat = ["A+", "O-", "AB+", "O+", "AB+", "AB+", "O-", "AB+", "O+", "AB+"];
+            let summa = 0;
+
+            for(let i = 0; i < veriryhmat.length; i++){
+                if(veriryhmat[i] === input){
+                    summa = summa + 1;
+                    
+                }
+            }
+            vastaus.innerHTML = 'Veriryhmiä ' + input + ' on ' + summa + ' kappaletta.'
+        }
+        
+        
+
+    </script>
+    
+</body>
+</html>
