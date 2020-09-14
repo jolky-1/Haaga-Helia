@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tehtävä4 wk5</title>
+
+    <style>
+        #output{
+            display: grid;
+            grid-template-columns: repeat(5 , 0.5fr);
+            grid-gap: 1rem;
+            max-width: 700px;
+        }
+        img{
+            width: 100px;    
+        }
+    </style>
+</head>
+<body>
+    <div id="output"></div>
+
+    <script>
+        let kuvat = [
+            "https://myy.haaga-helia.fi/~swd1ta001/kuvatJS/assi.jpg",
+            "https://myy.haaga-helia.fi/~swd1ta001/kuvatJS/myynti.jpg",
+            "https://myy.haaga-helia.fi/~swd1ta001/kuvatJS/tiko.jpg",
+            "https://myy.haaga-helia.fi/~swd1ta001/kuvatJS/yleinen1.jpg",
+            "https://myy.haaga-helia.fi/~swd1ta001/kuvatJS/yleinen2.jpg"
+        ];
+
+        const output = document.querySelector('#output');
+
+        let teksti = "";
+        
+        for(let i = 0; i < kuvat.length; i++){
+            teksti = teksti + "<img src=" + kuvat[i] +" > " ;
+        }
+        output.innerHTML = teksti;
+
+    </script>
+</body>
+</html>

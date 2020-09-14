@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tehtävä 5 wk5</title>
+    <style>
+        div{
+            margin-top: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <form>
+        <label>Nimi: </label>
+        <input type="text" id="nimi" >
+        <input type="button" value="Lisää" onclick="lisaa()">
+        <input type="button" value="Arvo" onclick="arvo()">
+    </form>
+
+    <div id="osallistujat"></div>
+    <div id="voittaja"></div>
+
+    <script>
+        let nimet = [];
+        let osallistujat = document.querySelector('#osallistujat');
+        let arvonta = document.querySelector('#voittaja');
+            
+        function lisaa(){
+            let inputValue = document.querySelector('#nimi').value;
+            nimet.push(inputValue);
+            document.querySelector('#nimi').value = "";
+            naytaNimet();
+        }
+
+        function naytaNimet(){
+            let teksti = "Annetut nimet: ";
+            for(let i = 0; i < nimet.length ; i++){
+                teksti = teksti + nimet[i] + ' ';
+            }
+            osallistujat.innerHTML = teksti;
+        }
+
+        function arvo(){
+            let voittaja = Math.floor(Math.random() * nimet.length);
+            arvonta.innerHTML = 'Voittaja on ' + nimet[voittaja];
+        }
+
+    </script>
+</body>
+</html>

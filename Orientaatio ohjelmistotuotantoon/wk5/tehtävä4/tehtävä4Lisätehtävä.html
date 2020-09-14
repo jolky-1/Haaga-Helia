@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tehtävä4 lisätehtävä wk5</title>
+    <style>
+        .buttons button{
+            padding:1rem;
+            border-radius: 1rem;
+            font-size: 1.7rem;
+            width: 20%;
+        }
+        #btn{
+            background-color: limegreen;
+        }
+        #btn-stop{
+            background-color: rgb(250, 2, 2);
+        }
+        div{
+            margin-top: 1rem;
+        }
+    </style>
+
+</head>
+<body>
+    <div class="buttons">
+        <button id="btn"> Näytä kuvat</button>
+        <div id="btn2"></div>
+        </div>
+    <div id="output"></div>
+
+    <script>
+        const btn = document.querySelector('#btn');
+        const btnStop = document.querySelector('#btn-stop');
+        let output = document.querySelector('#output');
+        btn.addEventListener('click',naytaKuvat);
+        let kuvat = ["https://myy.haaga-helia.fi/~swd1ta001/kuvatJS/assi.jpg",
+                        "https://myy.haaga-helia.fi/~swd1ta001/kuvatJS/myynti.jpg",
+                        "https://myy.haaga-helia.fi/~swd1ta001/kuvatJS/tiko.jpg",
+                        "https://myy.haaga-helia.fi/~swd1ta001/kuvatJS/yleinen1.jpg",
+                        "https://myy.haaga-helia.fi/~swd1ta001/kuvatJS/yleinen2.jpg"
+        ];
+        let interval;
+
+        function naytaKuvat(){
+            let index = 0
+
+            interval = setInterval(function (){
+
+                if(index === kuvat.length){
+                    index = 0;
+                }
+
+                output.innerHTML =  "<img src=" + kuvat[index] +" > " ;
+                index += 1;
+
+            },2000);
+
+            const btnStop = document.createElement('button');
+            btnStop.textContent = 'Lopeta';
+            btnStop.setAttribute('id','btn-stop');
+            btn2.appendChild(btnStop);
+            btnStop.addEventListener('click',function(){
+                clearInterval(interval);
+                btnStop.remove();
+            });
+        }
+
+        
+    </script>
+</body>
+</html>
