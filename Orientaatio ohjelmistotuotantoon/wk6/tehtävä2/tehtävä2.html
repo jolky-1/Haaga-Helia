@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tehtävä2 wk6</title>
+</head>
+<body>
+    <div id="vastaus"></div>
+
+    <script>
+        let kurssit = [
+            { "nimi" : "Orientaatio digitaalisiin palveluihin",
+            "tunnus" : "DIG1TA001",
+            "laajuus" : 5,
+            "ajoitus" : "1. lukukausi"
+            },
+            { "nimi" : "Orientaatio ohjelmistotuotantoon",
+            "tunnus" : "SWD1TA001",
+            "laajuus" : 5,
+            "ajoitus" : "1. lukukausi"
+            },
+            { "nimi" : "Orientaatio ICT ja liiketoiminta",
+            "tunnus" : "BIG1TA001",
+            "laajuus" : 5,
+            "ajoitus" : "1. lukukausi"
+            },
+            { "nimi" : "Orientaatio ICT-infrastruktuuriin",
+            "tunnus" : "ICT1TA010",
+            "laajuus" : 5,
+            "ajoitus" : "1. lukukausi"
+            }, 
+            { "nimi" : "Ruotsin kielioppi ja rakenteet",
+            "tunnus" : "SWE8TA062",
+            "laajuus" : 3,
+            "ajoitus" : "1. lukukausi"
+            },
+            { "nimi" : "Työvälineet myynnin ja palvelun ympäristössä",
+            "tunnus" : "SAL1TA001",
+            "laajuus" : 5,
+            "ajoitus" : "1. lukukausi",
+            } 
+        ];
+        let vastaus = document.querySelector('#vastaus');
+        let teksti = "";
+
+        for(let i = 0 ; i < kurssit.length; i++){
+            teksti = teksti + `Tunnus: ${kurssit[i].tunnus} <br>
+            Nimi: ${kurssit[i].nimi} <br> 
+            Laajuus: ${kurssit[i].laajuus} <br>
+            Ajoitus: ${kurssit[i].ajoitus} <br>
+            <br>`;
+        }
+        vastaus.innerHTML = teksti;
+        
+    </script>
+</body>
+</html>

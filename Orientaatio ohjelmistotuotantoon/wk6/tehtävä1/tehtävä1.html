@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tehtävä1 wk 6</title>
+</head>
+<body>
+    <div id="vastaus"></div>
+
+    <script>
+        const vastaus = document.querySelector('#vastaus');
+
+        let tiedot = {
+            tunnus: 2006142,
+            etunimi : "Joonas",
+            sukunimi: "Luokkakallio",
+            lähiosoite: "Kap Hornin katu 3 a 10",
+            postinumero: "00220",
+            postitoimipaikka: "Helsinki",
+            kokonimi: function(){
+                return this.etunimi + " " + this.sukunimi; 
+            },
+            osoite: function() {
+                return this.lähiosoite + " " + this.postinumero + " " + this.postitoimipaikka;
+                
+            }
+        }
+        
+        vastaus.innerHTML = `Tunnus: ${tiedot.tunnus} <br>
+                            Nimi: ${tiedot.kokonimi()} <br>
+                            Osoite: ${tiedot.osoite()}`
+        
+    </script>
+</body>
+</html>
