@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kertaus 2</title>
+</head>
+<body>
+    <label >Päivänmäärä (vvvv-kk-pp)</label>
+    <input type="text" id="syote">
+    <input type="button" value="Muunna" onclick="muunna()">
+
+    <div class="vastaus"></div>
+
+    <script>
+
+        let vastaus = document.querySelector('.vastaus');
+        function muunna(){
+            let syote = document.querySelector('#syote').value;
+
+            let vuosi = syote.substr(0,4);
+            let kk = syote.substr(5,2);
+            let pp = syote.substr(8,2);
+
+            vastaus.innerHTML = pp + '.' + kk + '.' + vuosi
+            
+        }
+    </script>
+</body>
+</html>

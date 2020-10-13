@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tehtävä3</title>
+    <style>
+        div{
+            margin-top: 1rem;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Covid-19 tartunnan vuoksi sairaalahoidossa 9.10.2020</h2>
+    <label>Erityisvastuualue: </label>
+    <input type="text" id="syote">
+    <input type="button" value="Listaa alueet" onclick="listaaAlueet()">
+    <input type="button" value = "Näytä alueen tilanne" onclick="naytaAlueenTilanne()" >
+    <input type="button" value = "Näytä koko maan tilanne" onclick="naytaKokoMaanTilanne()" >
+    <input type="button" value = "Eniten tehohoidossa" onclick="enitenTehohoidossa()" >
+
+    <div class="vastaus"></div>
+
+    <script>
+        let vastaus = document.querySelector('.vastaus');
+
+        let tilasto = [
+            {
+                erityisvastuualue: "HYKS",
+                data: {
+                    osastohoidossa: 14,
+                    tehohoidossa: 3,
+                    kuolleet: 281
+                }
+            },
+            {
+                erityisvastuualue: "KYS",
+                data: {
+                    osastohoidossa: 4,
+                    tehohoidossa: 0,
+                    kuolleet: 25
+                }
+            },
+            {
+                erityisvastuualue: "OYS",
+                data: {
+                    osastohoidossa: 4,
+                    tehohoidossa: 0,
+                    kuolleet: 13
+                }
+            },
+            {
+                erityisvastuualue: "TAYS",
+                data: {
+                    osastohoidossa: 7,
+                    tehohoidossa: 2,
+                    kuolleet: 7
+                }
+            },
+            {
+                erityisvastuualue: "TYKS",
+                data: {
+                    osastohoidossa: 3,
+                    tehohoidossa: 0,
+                    kuolleet: 20
+                }
+            }
+        ];
+
+
+        function listaaAlueet(){
+            let teksti = "";
+            for(let i = 0; i < tilasto.length; i++){
+                teksti = teksti + tilasto[i].erityisvastuualue + "<br>"
+            }
+            vastaus.innerHTML = teksti;
+        }
+
+        function naytaAlueenTilanne(){
+            let syote = document.querySelector('#syote').value;
+            syote = syote.toUpperCase();
+            let teksti = "";
+
+            for(let i = 0; i < tilasto.length; i++){
+                if(syote == tilasto[i].erityisvastuualue){
+                    vastaus.innerHTML = tilasto[i].erityisvastuualue + "<br>" +
+                                        "Osastohoidossa: " + tilasto[i].data.osastohoidossa + "<br>" +
+                                        "Tehohoidossa: " + tilasto[i].data.tehohoidossa + "<br>" +
+                                        "Kuolleet(kumulatiivinen): " + tilasto[i].data.kuolleet;
+                }
+            }
+        }
+
+        function naytaKokoMaanTilanne(){
+            let osastohoidossa = 0
+            let tehohoidossa = 0
+            let kuolleet = 0
+
+            for(let i = 0; i < tilasto.length; i++){
+                osastohoidossa = osastohoidossa + tilasto[i].data.osastohoidossa;
+                tehohoidossa = tehohoidossa + tilasto[i].data.tehohoidossa;
+                kuolleet = kuolleet + tilasto[i].data.kuolleet;
+            }
+
+            vastaus.innerHTML = "Koko maa <br>" +
+                                "Osastohoidossa: " + osastohoidossa + "<br>" +
+                                "Tehohoidossa: " + tehohoidossa + "<br>" +
+                                "kuolleet(kumulatiivinen) " + kuolleet;
+        }
+
+        function enitenTehohoidossa(){
+            let eniten = 0;
+            let alue = "";
+            for(let i = 0; i < tilasto.length; i++){
+                if(eniten < tilasto[i].data.tehohoidossa){
+                    eniten = tilasto[i].data.tehohoidossa;
+                    alue = tilasto[i].erityisvastuualue;
+                }
+            }
+            vastaus.innerHTML = "Eniten tehohoidossa alueella " + alue + ": " + eniten;
+        }
+    </script>
+    
+</body>
+</html>

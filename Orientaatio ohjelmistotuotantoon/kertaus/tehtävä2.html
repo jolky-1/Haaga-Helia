@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tehtävä 2</title>
+    <style>
+        div{
+            margin-top: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <label >Saadut pisteet: </label>
+    <input type="text" id="pisteet">
+    <label>Maksimipisteet</label>
+    <input type="text" id="maksimipisteet">
+    <input type="button" value="Määritä arvosana" onclick="maaritaArvosana()">
+    <div class="vastaus"></div>
+
+
+
+    <script>
+
+        let vastaus = document.querySelector('.vastaus');
+
+        function maaritaArvosana(){
+            let pisteet = document.querySelector('#pisteet').value;
+            let maksimi = document.querySelector('#maksimipisteet').value;
+            let arvosana = laskeArvosana(pisteet,maksimi);
+            let sanallinen = maaritaSanallinenArvio(arvosana);
+            vastaus.innerHTML = "Arvosana on " + arvosana + " (" + sanallinen + ")";
+            
+        }
+
+        function laskeArvosana(pisteet,maksimi){
+            let hyvaksytty = Math.floor(maksimi/2);
+            let hyvaksyttyPisteet = Math.min(1 + Math.floor((pisteet - hyvaksytty) / ((maksimi - hyvaksytty) / 5)), 5);
+            return hyvaksyttyPisteet;
+        }
+
+        function maaritaSanallinenArvio(arvosana){
+            if(arvosana == 0){
+                return "hylätty";
+            }else if(arvosana == 1){
+                return "välttävä";
+            }else if(arvosana == 2){
+                return "tyydyttävä";
+            }else if(arvosana == 3){
+                return "hyvä";
+            }else if(arvosana == 4){
+                return "erittäin hyvä";
+            }else {
+                return "Kiitettävä"
+            }
+        }
+    </script>
+    
+</body>
+</html>

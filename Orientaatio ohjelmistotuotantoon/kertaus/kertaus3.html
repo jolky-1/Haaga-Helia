@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>kertaus3</title>
+
+</head>
+<body>
+    <label >Päivänmäärä (vvvv-kk-pp)</label>
+    <input type="text" id="syote">
+    <input type="button" value="Kerro viikonpäivä" onclick="viikonpaiva()">
+
+    <div class="vastaus"></div>
+
+    <script>
+
+        function viikonpaiva(){
+            let teksti = "";
+            let vastaus = document.querySelector('.vastaus');
+            let pvm = document.querySelector('#syote').value;
+
+            let vuosi = pvm.substr(0,4);
+            let kk = pvm.substr(5,2);
+            let pp = pvm.substr(8,2);
+
+            let pva = new Date(vuosi,kk,pp).getDay();
+            if(pva === 0){
+                teksti = "Sunnuntai"
+            }else if(pva === 1){
+                teksti = "Maanantai";
+            }else if(pva === 2){
+                teksti = "Tiistai"
+            }else if(pva === 3){
+                teksti = "Keskiviikko"
+            }else if(pva === 4){
+                teksti = "Torstai"
+            }else if(pva === 5){
+                teksti = "Perjantai"
+            }else{
+                teksti = "Lauantai"
+            }
+            vastaus.innerHTML = teksti;
+            
+        }
+
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tehtävä1</title>
+    <style>
+        div{
+            margin-top: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <label>Pysäköinti minuutteina: </label>
+    <input type="text" id="minuutit">
+    <label >Kanta-asiakas</label>
+    <input type="checkbox" id="kantaAsiakas">
+    <input type="button" value="Määritä maksu" onclick="maksu()">
+
+    <div class="vastaus"></div>
+    <script>
+
+        function maksu(){
+
+            let vastaus = document.querySelector('.vastaus');
+            let minuutit = document.querySelector('#minuutit').value;
+            let kantaAsiakas = document.getElementById('kantaAsiakas').checked;
+            let teksti = "Maksu on ";
+            let maksu = 0;
+            
+            if(minuutit > 0 && minuutit <= 60){
+                maksu = 5.60;
+            }
+            else{
+                let maara = Math.ceil(minuutit / 30)
+                maksu = maksu + (maara-2) * 2.8 + 5.6;
+                if(maksu >= 36){
+                    maksu = 36;
+                }
+            }
+
+            if(kantaAsiakas === true){
+                maksu = maksu * 0.8;
+                console.log('check')
+            }
+
+            vastaus.innerHTML = teksti + maksu.toFixed(2) + "€";
+        }
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kertaus4</title>
+</head>
+<body>
+    <div class="vastaus"></div>
+    <script>
+        let vastaus = document.querySelector('.vastaus');
+        let minigolf = [23, 19, 37, 20, 21, 30, 26, 24];
+        let summa = 0;
+        let pienin = 999;
+        let suurin = 0;
+         
+
+        for(let i = 0; i < minigolf.length; i++){
+            summa = summa + minigolf[i];
+
+            if(minigolf[i] < pienin){
+                pienin = minigolf[i]
+            }
+            if(minigolf[i] > suurin){
+                suurin = minigolf[i]
+            }
+        }
+
+        let ka = summa / minigolf.length;
+        vastaus.innerHTML ='keskiarvo on ' + ka.toFixed(0) + "<br>" +
+        "pienin on " + pienin + "<br>" +
+        "Suurin on " + suurin ;
+
+    </script>
+</body>
+</html>
