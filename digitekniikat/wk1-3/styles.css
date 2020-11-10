@@ -1,0 +1,167 @@
+body {
+  margin-top: 6rem;
+  position: relative;
+  font-family: "Turret Road", cursive;
+}
+.card-deck {
+  margin: 10rem 1rem;
+}
+
+/* taustan väri */
+.navbar-custom {
+  background-color: rgba(7, 125, 194, 0.9);
+}
+/* brandin ja tekstin väri */
+.navbar-custom .navbar-brand,
+.navbar-custom .navbar-text {
+  color: rgba(8, 253, 253, 0.932);
+  font-size: 220%;
+}
+/* linkin väri */
+.navbar-custom .navbar-nav .nav-link {
+  color: rgba(8, 253, 253, 0.932);
+  font-size: 170%;
+}
+/* aktiivisen & hover-linkin väri */
+.navbar-custom .nav-item.active .nav-link,
+.navbar-custom .nav-item:hover .nav-link {
+  color: #ffffff;
+}
+.nav-link.active {
+  color: #ffffff !important;
+}
+
+.custom-toggler .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(8, 253, 253, 0.932)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+}
+
+.carousel-inner {
+  width: 80%;
+
+  margin: auto;
+}
+
+.carousel-item img {
+  width: 100%;
+  height: 100%;
+}
+
+.carousel-control-prev-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23000' viewBox='0 0 8 8'%3E%3Cpath d='M5.25 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3E%3C/svg%3E");
+}
+
+.carousel-control-next-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23000' viewBox='0 0 8 8'%3E%3Cpath d='M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3E%3C/svg%3E");
+}
+#carouselExampleIndicators {
+}
+.carousel-caption {
+  color: #000;
+  font-size: 200%;
+  background-color: rgba(255, 255, 255, 0.5);
+  width: 70%;
+  border-radius: 5px;
+}
+.carousel-caption h5 {
+  font-size: 130%;
+}
+.container-fluid {
+  margin-top: 3rem;
+}
+.col-md-4 img {
+  height: 100%;
+  border-radius: 30% 0 30% 0;
+}
+.col-md-4 {
+  text-align: center;
+}
+/* kortit*/
+.card {
+  box-shadow: 6px 6px 10px #555;
+  font-size: 130%;
+}
+
+/* haitari*/
+.haitari-box {
+  margin-top: 4rem;
+  margin-bottom: 4rem;
+}
+
+.haitari {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-items: center;
+  align-items: center;
+  background-color: #fff;
+  font-size: 130%;
+}
+.haitari img {
+  border-radius: 30% 0;
+}
+
+#accordion .card-link {
+  color: rgba(8, 253, 253, 0.932);
+  font-size: 130%;
+}
+#accordion .card {
+  background-color: rgba(7, 125, 194, 0.9);
+}
+
+/* tabs*/
+#tabit .nav-link.active {
+  color: rgba(7, 125, 194, 0.9);
+  background-color: rgba(8, 184, 253, 0.932);
+}
+#tabit .nav-link {
+  color: rgba(8, 253, 253, 0.932);
+  background-color: rgba(7, 125, 194, 0.9);
+}
+
+/*taulukko*/
+
+#yhteystiedot {
+  margin-top: 4rem;
+  font-size: 130%;
+}
+
+#ravintola {
+  font-size: 130%;
+}
+
+/*Form*/
+
+form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.radio-container,
+.checkbox-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-items: start;
+  align-items: center;
+}
+.radio-header,
+.checkbox-header {
+  grid-column: 1/3;
+  margin-top: 1rem;
+}
+
+.select-container {
+  font-size: 120%;
+  grid-column: 1/3;
+  margin: 2rem 0;
+}
+#submit {
+  padding: 0.5rem 0rem;
+  font-size: 150%;
+  background-color: rgba(7, 125, 194, 0.9);
+  color: #fff;
+}
+#yhteydenotto {
+  margin: 4rem 0rem;
+}
+.tulostus {
+  font-size: 140%;
+}
