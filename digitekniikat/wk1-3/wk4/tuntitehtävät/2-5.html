@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2-5</title>
+</head>
+<body>
+    <button>Klikkaa</button>
+    <div style="width:50px;background-color:purple;height: 50px;position: absolute;text-align: center;" > Hei!</div>
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script>  
+        $(document).ready(function(){ 
+           $("button").click(function(){  
+              var div=$("div"); 
+              div.animate({height:'300px',opacity:'0.4'},"slow"); 
+              div.animate({width:'300px',opacity:'0.8'},"slow"); 
+              div.animate({height:'100px',opacity:'0.4'},"slow"); 
+              div.animate({width:'100px',opacity:'0.8'},"slow"); 
+              div.delay(1200).animate({left:'200px'},"slow");
+              div.animate({fontSize:'3em'},"slow");
+              div.delay(1200).animate({left:'0px'},"slow");
+              div.animate({fontSize:'1.2em'},"slow");
+            });
+         })
+       </script>
+</body>
+</html>

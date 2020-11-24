@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>jQuery 2-1</title>
+
+    </head>
+    <body>
+        <ul>
+            <li>etusivu</li>
+            <li>info</li>
+            <li>tuotteet
+            <ul>
+                <li>tuote1</li>
+                <li class="sivulla">tuote2</li>
+                <li>tuote3</li>
+            </ul>
+            </li>
+        <li>yhteystiedot</li>
+        </ul>
+
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+        <script> 
+            (function(){
+               $('li.sivulla').css('color','red')
+               .css('fontWeight','bold')
+               .css('fontSize', '1.3em'); 
+
+              
+            })();  
+         </script>
+    
+    </body>
+</html>

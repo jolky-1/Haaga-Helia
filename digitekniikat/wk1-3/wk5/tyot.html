@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Työt osa 6</title>
+</head>
+<body>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+        $.getJSON("http://gis.vantaa.fi/rest/tyopaikat/v1/Tekninen%20ala", function(data){
+            let items =[];
+            items.push("<h1> Tekninen ala </h1>")
+            items.push("<ul>")
+            $.each(data, function( key, d){
+                items.push("<li>" + d.tyotehtava + "</li>")
+                items.push("<p>" + d.osoite + "<p>")
+                items.push("<p>" + d.linkki + "<p>")
+            })
+
+            items.push("</ul>");
+            $("body").append(items.join(""));
+        })
+
+
+    </script>
+</body>
+</html>

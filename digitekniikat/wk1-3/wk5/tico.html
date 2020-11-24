@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TicoCafeJson osa3</title>
+</head>
+<body>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+        $.getJSON( "yritys.json", function( data ) {
+            let items = [];
+            items.push("<h1>" + data.yritys + "</h1>");
+            items.push("<h4>"+ data.osoite + "</h4>");
+            items.push("<h4>"+ data.email + "</h4>");
+           
+            
+            let tuotteet = data.tuotteet;
+
+            items.push("<h3> Tuotteet </h3>");
+            items.push("<ul>");
+            $.each(tuotteet, function( key, d ){
+                items.push("<li>" + d + "</li>");
+            })
+            items.push("</ul>");
+
+            let palvelut = data.palvelut;
+
+            items.push("<h3> Palvelut </h3>");
+            items.push("<ul>");
+            $.each(palvelut, function(key, d) {
+                items.push("<li>" + d + "</li>")
+            })
+            items.push("</ul>");
+            $("body").append(items.join(""));
+            console.log(items)
+            })
+    </script>
+</body>
+</html>

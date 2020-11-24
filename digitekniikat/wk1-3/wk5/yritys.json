@@ -1,0 +1,7 @@
+{
+    "yritys":" Tico Cafe",
+    "osoite": "Ratapihantie 13, Helsinki",
+    "email": "info@ticocafe.com",
+    "tuotteet": ["makeat kahvileivät", "suolaiset piirakat", "erikoiskahvit"],
+    "palvelut": ["kahvila", "konditorio", "pitopalvelu"]
+}

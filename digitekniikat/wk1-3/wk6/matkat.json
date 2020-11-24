@@ -1,0 +1,12 @@
+{
+    "matkakohde": "Tampere",
+    "kulkuneuvo": ["auto","bussi","juna","lentokone"],
+    "matkustusaika": {"alkaa": "15.3.2019", "päättyy": "17.3.2019"},
+    "matkapaivat": 3,
+    "matkustajat":[
+                {"etunimi":"Mikko", "sukunimi": "Mallikas"},
+                {"etunimi":"Anna", "sukunimi": "Malli"},
+                {"etunimi":"Esa", "sukunimi": "Merkki"}
+                ],
+    "majoitus": true
+}

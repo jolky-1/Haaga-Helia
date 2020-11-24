@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Palaveri osa5</title>
+</head>
+<body>
+    <div id="palaveri"></div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+        $.getJSON("palaveri.json", function(data){
+            let items = [];
+
+            items.push("<h1> " + data.palaverinaihe + "</h1>");
+            items.push("<h3> Klo " + data.alkamisAika + "</h3>");
+            items.push("<h3> Paikka " + data.paikka + "</h3>");
+            items.push("<h3> Palaverin kesto  " + data.kestoH + " tuntia</h3>");
+
+            let osallistujat = data.osallistujat;
+            items.push("<ul>")
+            items.push("<h3> Osallistujat</h3>")
+            $.each(osallistujat, function(key,d){
+                items.push("<li>" + d + "</li>")
+            })
+            items.push("</ul>");
+
+            items.push("<p> Osallistujien lukumäärä " + data.osallistujatLkm + " </p>");
+
+
+
+            $("#palaveri").append(items.join(""));
+        })
+    </script>
+</body>
+</html>

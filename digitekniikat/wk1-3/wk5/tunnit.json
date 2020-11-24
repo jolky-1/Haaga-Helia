@@ -1,0 +1,31 @@
+[{
+    "nimi": "Mikko Mallikas",
+    "tunnit": 10,
+    "paikka": "Helsinki"
+},
+{
+    "nimi": "Anna Malli",
+    "tunnit": 2,
+    "paikka": "Tampere"
+},
+{
+    "nimi": "Esa Merkki",
+    "tunnit": 12,
+    "paikka": "Turku"
+},
+{
+    "nimi": "Matti Meikäläinen",
+    "tunnit": 6,
+    "paikka": "Kuopio"
+},
+{
+    "nimi": "Maija Meikäläinen",
+    "tunnit": 5,
+    "paikka": "kuopio"
+},
+{
+    "nimi": "Tero Testaaja",
+    "tunnit": 10,
+    "paikka": "Espoo"
+}
+]

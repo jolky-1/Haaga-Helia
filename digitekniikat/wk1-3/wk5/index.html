@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oppimistehtävä 5</title>
+</head>
+<body>
+    <div></div>
+
+    <ul>Tunnit</ul>
+    
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+        $.getJSON("ika.json", function(data){
+            $.each(data, function(key, d){
+            $("div").append("nimi " + d.nimi  +  ", " + d.ikä +"<br>");
+            });
+        });
+
+        $.getJSON( "tunnit.json", function( data ) {
+            var items = [];
+            $.each(data, function( key, d ) {
+            items.push( "<li> Nimi: " + d.nimi + ", tunnit: " + d.tunnit + ", paikka: "+ d.paikka +" </li>" );
+        });
+            $("ul").append(items.join(""));
+        });
+    </script>
+</body>
+</html>
