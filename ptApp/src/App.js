@@ -26,6 +26,7 @@ function App() {
           >
             <Tab value="one" label="Customers" />
             <Tab value="two" label="Training" />
+         {/*<Tab value="three" label="Calender" />*/}
           </Tabs>
         </Toolbar>
       </AppBar>
